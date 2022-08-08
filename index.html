@@ -4,82 +4,144 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="index.css" />
-    <title>Zuri</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <title>Zuri | Learn, Build, Grow</title>
   </head>
   <body>
-    <section id="header">
-      <div class="header container">
-        <div class="nav-bar">
-          <div class="brand">
-            <div class="hamburger"><div class="bar"></div></div>
-            <div class="logo">
-                <img src="https://res.cloudinary.com/zuri-team/image/upload/zuriboard/tenant-logo/wmqxdxt4skv05wsvc21o.png" alt="Zuri logo">
-            </div>
-          </div>
-          <div class="nav-list">
-            <ul>
-              <li>
-                <div class="toggle-container">
-                  <div class="toggle-btn">
-                    <div class="inner-circle"></div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAA1UlEQVRIie2WTQrCMBCFP7yDQc/Tk+vCYk03uuhlFF2Y0PGHpNOkoYs8GCihzEeSeY9A1cplgN6VKQXdAlfg6WoA9qWhxeAXB7oJqP/uNI02SvCd9702Yq1xaw9lr9nyO54l7Y6zaXVgA5yAQ0LvI2BR+NwwTuo58F/sjjvGqY/CpU8HYJcA/u4V9LnlNxxyVS9BJYcraD3N8WQ9avgcrlAMxsAyXlWTbYE2AdyitNNU1chcFPwvBqfMQ7JkDCY9BLQKPX1C8boIvAjUyz9vF/FpVVa9AFMpb+OEehGYAAAAAElFTkSuQmCC"
-                />
-              </li>
-              <li>
-                <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABKUlEQVRIie2WMW4CMRBFHyiCgipFOkiVM1BBlRSkyBVyB8rkBJsj0HIFhOjpOANQBNiUtJFSAEWMBMt6PDZGIMSXplhr/jzvaNZeuOmCVQLawNRE26ydVG/AGFhn4ht4BwqxgXVgmAPMxghoxgA+Al1gpYDuRg94CgHeAwnw6wncjT+gAzxooS/A8ghgNpbAswY8iQjdxjgLyZvCtWZ3AdpjFZWmPlA1ZilqwCB0Z3mtqnr4a5Yae9K22vdgcNbQtjrl//OSjsYS8AX8KGseSJrORPAlDq8X+AOoAJ/mORV8qcUTBN62tqwoIHm8h6tgWZdk8wQNV3TdeeRGvWvP9sYucOOI2uIPge/J5RowKc85XAvLZjRTbcubK7y8msRYd/EMaGnAN12XNl/GstTgb6ukAAAAAElFTkSuQmCC"
-                />
-              </li>
-              <li>
-                <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAA30lEQVRIieWUOwrCQBCGPwW1iqQVS3OHXEGriBAvoeLF9B5ioWWEmEavoLUWTnCVTdzdEBD9Ydhi/scO+4B/QgAcpQJTUdMiIAYGUrHV1j6gDcyBFLhJpcBMepXQB/aK8XvtgJ6reUcxT4AI8KTGwEEJcZpkqZj7mr6vhCxcArYijko4E+FsXAKuIvZKOF3hXFwC8oOsxLN5B0743YCGg5dWUxQQynoyMM45oa5ZFDCVdWUQsJZV+wHqxjK5mmV48az9kG2Q8XxUmanIZgL1x2xZ6IwxAs48bs2wjoDvxB2UrzGfa5srZAAAAABJRU5ErkJggg=="
-                />
-              </li>
-              <li>
-                <div>
-                  <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABFUlEQVRIie2VMWoCYRBGnwbcQrDSykZrC0vrXCLgHdSriHqFeJVoqpgmVdKkC4iCa6FYaLGzIGt0Z+IIBvbBNLvfzvun+Gch404JgB4wBdZSU6Ar725CFZgB+zP1JhlXghTpsdx18p5CGlfHU/xqEE88xaFBHGoa5pTivfGgqX3zykZrg3SlCWnFHwaxKqsVPxvEY0M2lYDojmruccFTDNFWuiS/yeaKKRAtiAnRtQmBF3nmPmmGCw+G3CNQAn7OZJpAA/jGvulOqAF9YC7NNsAQaAFFqRYwAraSmcs3tb8ISyLYof85JGsHDKSXijrwdYUwWZ/SM5V3R2lcs6Tkt11d0ZzOSFkTagNL/KZdAE+OQ2T8Ew5HfK875qq5sgAAAABJRU5ErkJggg=="
-                  />
-                </div>
-              </li>
-            </ul>
-          </div>
+    <header class="header position-relative mb-5">
+      <div class="container-fluid px-3">
+        <div class="flex my-5">
+          <img
+            src="images/home-images/zuri-logo-full.svg"
+            alt=""
+          />
         </div>
+        <h2 class="my-3">Learn, Build, Grow</h2>
+        <p class="my-5">
+          Unlock your Brilliance with our hands-on
+          <a href="#" class="text-tomato">beginner</a> and
+          <a href="#" class="text-tomato">expert training</a>. Zuri Team has been
+          immensely successful in creating a global network of a highly adept
+          intelligent workforce that can help your company achieve their
+          mission-critical
+          <a href="#" class="text-tomato">projects and goals.</a>
+        </p>
+
+        <div class="flex my-3">
+          <a href="beginner.html" class="btn-red d-inline-block">I'm new to the industry</a>
+          <a href="expert.html" class="btn-white d-inline-block">I need industry experience</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="what-we-do my-5 py-5 px-1 text-center position-relative">
+      <h5 class="text-tomato">By ZURI Team</h5>
+      <p class="h4">
+        We cater for every level of <br />
+        expertise and needs in the industry.
+      </p>
+    </section>
+
+    <section class="d-lg-flex py-3 px-2 position-relative">
+      <div class="card py-5 px-2 px-md-4 px-lg-5 mx-1 mx-md-4 mx-lg-5 my-5">
+        <div class="img">
+          <img
+            src="images/home-images/zuri-training-img.svg"
+            class="card-img"
+            alt=""
+          />
+        </div>
+        <p class="py-3">
+          We understand a complete beginner cannot become a professional after a
+          few weeks, the aim here is to get you familiar enough with each the
+          tools such that you’ll be able to continue learning on your own with
+          minimal support.
+        </p>
+
+        <a href="#" class="text-tomato">I want to be trained &gt;</a>
+      </div>
+
+      <div class="card py-5 px-2 px-md-4 px-lg-5 mx-1 mx-md-4 mx-lg-5 my-5">
+        <div class="img">
+          <img
+            src="images/home-images/zuri-internship-img.svg"
+            class="card-img"
+            alt=""
+          />
+        </div>
+        <p class="py-3">
+          We place you in a work simulation. We give you tasks every week, the
+          tasks ranges from easy to hard as you progress from stage to stage,
+          making it to the final stage means you are ready for actual work.
+        </p>
+
+        <a href="#" class="text-tomato">I want to join the internship &gt;</a>
+      </div>
+
+      <div class="card py-5 px-2 px-md-4 px-lg-5 mx-1 mx-md-4 mx-lg-5 my-5">
+        <div class="img">
+          <img
+            src="images/home-images/zuri-talent-img.svg"
+            class="card-img"
+            alt=""
+          />
+        </div>
+        <p class="py-3">
+          Keeping pace with projects and being on the look out for the extremely
+          talented individuals has become ever more challenging. Here is where
+          Zuri Team comes into play to bring the best suited talent for your
+          company
+        </p>
+
+        <a href="#" class="mt-3 mb-5 text-tomato">I am looking for talents &gt;</a>
       </div>
     </section>
 
-    <section id="side-bar">
-        <div class="dashboard image-container">
-            <div class="image">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAC+ElEQVRIie2VT2hUVxSHv3NnnOTJlGrc1LoSwVJDBI1DScUapDAkit04IBIyohutKAFF0E2hpd1USNxZumhsU1REBDFqlaIYEO2QQJDoRkXchEpIFx2dmDfvni6mL/PmzXOYxNko/mDg3nN+53xz35/z4L3edUm9xlQ626pGvwI+A9YDHwEKTKE6rmL+UmPPjg3/9rAh4FR39gu19hgi6Xr8IjLiqRwduzp4d0Hg1kwm0Zx3vhc4HOUTYzdazxgRRiLKVeDUy2Shb+L8+dmo/iYquHH7ng+cf52bAkcAQbRf4WTQYz1jVG3oD8lA6Yco7Hfyzo22rbuWRjGqTtKaySScF84wypd+bJFdtMwrumITTEU1qe3TW4XkTDp88ni4eHHeGVDKUADXuLc1ISJoLS6zpjgiibBJOptfOP3AgYpocLOhq3cdkANiNQnzlxVjN+WGh+74gfA97i9BZeCVKbYo8uANYIXA2qg1PwSTc+D2ruwqYLO/Txadut/xgIoKlxHZUUgWloDcCOQ2p9LZVn9TvseqmfKF1z7XuH3zID9E+UXVDo3+MTQJkOrKHlF0S9CkojuAiQqwiKbnMcgAZhEuCHIqd+X0bT/Y2bm7Ob/Y/qyqPeECETr8deCplk/qRgrDsbi7996lM38Hwx3belfkPe8iKqmoMoU2fx18uFqgNJFU2VSLG1NvXxia2trzueuRg0poqN+yKHARXjeRaqu9q/egWnMTWB7OhfpZP16+1MJzlJUijIhETtI5ecR+Wte96+tmEy+6npwA3fk6b2U/nawGK0+AlTWJZXXHNP7U9UqF9UqRcX89dzQR+bPuDguVylgV2CKXy46GTK6JYpNZGviqWYQzVeDRK4P3gevBSkEXMr0AUEQ8d1aM/N9D9fro1dOPq8ClHN8BFrSvycangU8XChZ0TZONT6vKIcAzyLfBfMVXaPLR+LOPV69dAtJBAyXwY+7ar4PBWNV7k3wZO67o78BMA5ivgHP/8OE3Dej1Xm+Z/gPcYBj4N8sUbwAAAABJRU5ErkJggg==">
-            </div>
-            <p>Dashboard</p>
+    <footer>
+      <div class="home-footer mx-auto py-4 px-2 px-md-4 px-lg-5">
+        <div class="footer-item py-3 px-2">
+          <img
+            src="images/home-images/zuri-logo-full.svg"
+            alt=""
+          />
         </div>
-        <div class="user image-container">
-            <div class="image ">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAACU0lEQVRIie2Wv0/UYBjHP0/fHsclgnKD03GaGGUTEzGXODrceQMDiYs5Q+LguTgYJ/wnYHBjwZSQsEOsd8qiAyIQZZWNH04CJqIi+vZ1oFfLAbUlaKLhmzRp0/bz6fO+ed63cJz/PZL0hcu9/XnRDGEoARioY3N/fsJZ+mPiK8XbnUbpt0C2CbLh2VxKIreSiI3Sg81SAAMdohlKwkokBooHf9XO0MeNHb4olCs5jRpqCAxMKWHg9RPnXYA/OMG9GJxfFfsPLwA3gHagXaDPM0wXypWcz34eYX0WnxMS+1+YBVyF7hSt8oALZD2xBwGUUg+BtX2860oYiMvZJW4Mi0JXZ9yxldn6yLJCVwGMMSWAmcnHiylFN8g48HHnkPGU4mJoGH/LgaY5jpPpSWcVuJn0veYEYgNTAn0aNVwoV6oAGjUMICK1uMC4nGAB6bl+q0vEmjbQ0cRaV+juzNfUh88Zc89g+oHzQKt//xuwCGY0dWLr0fdP6XwUZ8YdW9klhmBlGoSgJ2ui1YMv25sbmdZMDeFqVLUCr1pSdnF7y5zajzNbH1luPKsaJ4VyJedZNHqvHUgDp7E415KySwi9UVI/uR+ezqNMEbjGTtVpIGcs09V5ofvN6uLCWlBxqPf2LIdHnGC4LQj1njFPRav8nOvInOuIsTkD1A8hcA/gZH1X0MdFAPHsange5iecJWNzJ6lVtLobwSmFxW0As/WRlWaIv9VFrdF7cvbk5vsIThsgSXenI4sA9JT7PQ7xN3LYzLmO1aj45d+SAi9IOHXHOc6/kZ/3NQW4ttRelgAAAABJRU5ErkJggg==">
-            </div>
-            <p>Users</p>
+
+        <div class="footer-item py-3 px-2">
+          <h4>Links</h4>
+          <a href="#" class="d-block text-tomato">Store</a>
+          <a href="#" class="d-block text-tomato">Blog</a>
         </div>
-        <div class="tasks image-container">
-            <div class="image">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAA+UlEQVRIie2SMU7DQBBF30xyBhrgBumyogEqCkhyhpjOZyIlEVewXFFFoiFwiaTiBDTspLIlksXgyAsR2ld5Z7TzPPaHROK/IdXD8Pp2gtpM4DiSaw3ky3JeAmj9Bmp3EaUAJ8CsOuhW4xMCb17FmXHZkfw0JN6RmtrVa3H/0lN770hc0w9K1Z8/Fw9PAG4yHZiXItT7CcOb7EKExXY9uLH5ngCcjadOvDwaHFU9/6FffqXgLPMSqtdFN8qszcB9WZZzgYZ/HJs/EwfD1UTUcDXRVbjabyws3Chre22HFK5vSeHal4MI1/oXfKuQOI8sX4loHnF+4sDYAJHeUKIicDM1AAAAAElFTkSuQmCC">
-            </div>
-            <p>Tasks</p>
+
+        <div class="footer-item py-3 px-2">
+          <h4>Contact</h4>
+          <p>8 Jubliee-CMD Road, Magodo, Lagos State</p>
+          <a href="#" class="d-block text-tomato">hello@iyke.com</a>
         </div>
-        <div class="posts image-container">
-            <div class="image">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAB+UlEQVRIie2VsWsTcRTHP+96aax20VUjOHQUxFwoiEO2JqR/gdRrpitWFBy6FUVnqYhKa3FpGl0yx1DopgTkzFDEWTBuBQUJYmp6zyGNWvkpd7krgvqdfvd439/nvd/vHT/41ySmYHZqtoSlDwWOh9ynq8i1VmNtOSzYMlZj6UoEKMCooA9yBXc+Fhg4EQGKCh6gKtzPFt0rccCR1HpaeaTCXL8G7oaBJwIeBp4YOCo8UfB3uF4G6MNnLx0YOFtwz++Hr6+o6HwfrndMHjsJsAjPnKK7P6jfVmmTJ/GjDqv/4L8fbHydnKKrpnhCaotY3p/oOKMarA79H3et3rFX9ScfonhOly4cTQf2eyAzdMfpwN5yCuV82HynUM6nA3tr8B33jlVE73068nnhda22Y0rI5/N25/DJRZRFYGQQH/6OhZvArqpcHescej45XZ74OWVyujzRGcs0UW4AuufZsxsUpuOXjYrkSjPnVK0qyimgg8p1Te2sA8iX0YuI3gLGEd6IBDN+vdoc7B1rqv16tTmiu2dAV/sAXZJealt6qW1El4BxEal1pZf169Xmj97Yr9OLxuOPwFxuyq2pxQJwFkCgRcBtf2Nt0+RL5FkE8Dcqm4ARYtKvjvpdMuVEB3sHDTdO9e/kFN23QCYmtx15qkUsD2jHgYpY3le4cqpj+dfNaAAAAABJRU5ErkJggg==">
-            </div>
-            <p>Posts</p>
+
+        <div class="footer-item py-3 px-2">
+          <h4>Follow Me</h4>
+          <a href="https://www.facebook.com/ikechukwu750"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://www.twitter.com/iyke4web"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://www.instagram.com/ikechukwu750"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.github.com/ikechukwu750"
+            ><i class="fab fa-github"></i
+          ></a>
         </div>
-    </section>
-    <script src="index.js"></script>
+      </div>
+
+      <hr>
+      <h5 class="text-center">&copy; 2022 Zuri Team</h5>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
